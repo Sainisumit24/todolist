@@ -19,7 +19,7 @@ body {
     position: absolute;
     top: 20px; /* Distance from the top */ 
     left: 20px; /* Distance from the left */
-    color: #82bcec; /* White text for visibility */
+    color: 82bcec; /* White text for visibility */
     font-size: 18px; /* Font size for roll number */
     z-index: 10; /* Ensure it appears above other elements */
 }
