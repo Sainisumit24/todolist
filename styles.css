@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    padding: 100px; /* Added padding to body for roll number */
+}
+
+/* Roll Number Styles */
+.roll-number {
+    position: absolute;
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    color: #fff; /* White text for visibility */
+    font-size: 18px; /* Font size for roll number */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+/* Floating Bubbles Animation */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0, 255, 255, 0.2);
+    animation: floating 10s infinite ease-in-out;
+    z-index: -1;
+}
+
+body::before {
+    top: 10%;
+    left: 30%;
+    animation-duration: 12s;
+}
+
+body::after {
+    bottom: 10%;
+    right: 30%;
+    animation-duration: 15s;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* Container Styles */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    width: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading Animation */
+h1 {
+    color: #00d2ff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-shadow: 0 0 5px #00d2ff, 0 0 10px #00d2ff;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #00d2ff, 0 0 10px #00d2ff; }
+    to { text-shadow: 0 0 15px #00d2ff, 0 0 30px #00d2ff; }
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+input[type="text"], input[type="datetime-local"] {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, border-color 0.3s;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="datetime-local"]:focus {
+    border: 1px solid #00d2ff;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+    animation: neonBorder 1s infinite alternate;
+}
+
+@keyframes neonBorder {
+    from { border-color: #00d2ff; }
+    to { border-color: #00ff80; }
+}
+
+/* Button Styles */
+button {
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.3s;
+    animation: buttonGlow 3s infinite alternate;
+}
+
+@keyframes buttonGlow {
+    from { box-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff; }
+    to { box-shadow: 0 0 20px #00ff80, 0 0 40px #00ff80; }
+}
+
+button:hover {
+    background: linear-gradient(45deg, #3a7bd5, #00d2ff);
+    transform: scale(1.05);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #333;
+    color: #00d2ff;
+}
+
+tr:hover td {
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: rowShadow 0.5s ease-in-out;
+}
+
+@keyframes rowShadow {
+    from { box-shadow: 0 0 5px rgba(0, 255, 255, 0.1); }
+    to { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+}
+
+.highlight {
+    background-color: rgba(255, 215, 0, 0.2);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
